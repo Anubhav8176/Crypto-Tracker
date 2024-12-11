@@ -3,7 +3,7 @@ package com.plcoding.cryptotracker.crypto.presentation.models
 import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes
 import com.plcoding.cryptotracker.crypto.domain.Coins
-import com.plcoding.cryptotracker.util.getDrawableIdForCoin
+import com.plcoding.cryptotracker.core.presentation.util.getDrawableIdForCoin
 import java.util.Locale
 
 //This class will contain all the data set used to show the data in the ui screen.
