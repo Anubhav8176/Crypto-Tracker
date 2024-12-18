@@ -19,7 +19,7 @@ class RemoteCoinDataSource(
     override suspend fun getCoins(): Result<List<Coins>, NetworkError> {
         return safeCall <CoinsResponseDto>{
             httpClient.get(
-                urlString = constructUrl("/assests")
+                urlString = constructUrl("/assets")
             )
         }.map {response->
             response.data.map { it.toCoin() }
