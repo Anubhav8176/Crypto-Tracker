@@ -17,6 +17,7 @@ import com.plcoding.cryptotracker.crypto.presentation.coin_list.components.CoinL
 @Composable
 fun CoinListScreen(
     state: CoinListState,
+    onAction: (CoinListAction)->Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -31,12 +32,14 @@ fun CoinListScreen(
         LazyColumn (
             modifier = modifier
                 .fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(10.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp)
         ){
             items(state.coins){coinUi ->
                 CoinListItem(
                     coinUi = coinUi,
-                    onClick = {},
+                    onClick = {
+                        onAction(CoinListAction.OnCoinClick(coinUi))
+                    },
                     modifier = modifier.fillMaxWidth()
                 )
                 HorizontalDivider()

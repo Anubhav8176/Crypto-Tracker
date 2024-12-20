@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -44,6 +45,7 @@ fun CoinListItem(
     }
     Row(
         modifier = modifier
+            .fillMaxWidth()
             .clickable(onClick = onClick)
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -55,9 +57,7 @@ fun CoinListItem(
             tint = MaterialTheme.colorScheme.primary,
             modifier = Modifier.size(85.dp)
         )
-        Column(
-                modifier = Modifier.weight(1f)
-                ){
+        Column{
             Text(
                 text = coinUi.symbol,
                 fontSize = 18.sp,
@@ -72,8 +72,11 @@ fun CoinListItem(
             )
         }
 
+        Spacer(modifier = modifier.weight(1f))
+
         Column(
-            horizontalAlignment = Alignment.End
+            horizontalAlignment = Alignment.End,
+            verticalArrangement = Arrangement.spacedBy(15.dp)
         ){
             Text(
                 text = "$ ${coinUi.priceUsd.formatted}",
@@ -81,7 +84,6 @@ fun CoinListItem(
                 color = contentColor,
                 fontWeight = FontWeight.SemiBold
             )
-            Spacer(modifier = modifier.height(8.dp))
             PriceChange(
                 change = coinUi.changePercent24Hr
             )

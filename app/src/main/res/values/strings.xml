@@ -6,4 +6,7 @@
     <string name="error_server_error">An internal server error encountered.</string>
     <string name="error_serialization">Cannot serialize or deserialize data.</string>
     <string name="error_unknown">Some unknown error encountered.</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="price">Price</string>
+    <string name="change_last_24hr">Change last 24hr</string>
 </resources>
